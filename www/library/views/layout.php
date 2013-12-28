@@ -87,8 +87,8 @@
     <div class="modal-body">
         <form method="post" id="add-form" action="/" class="well form-inline">
             <select name="name">
-                <option <%= (debt.name == "Åsa" ? 'selected="selected"') %>>Åsa</option>
-                <option <%= (debt.name == "Erik" ? 'selected="selected"') %>>Erik</option>
+                <option <%= (debt.name == "<?php echo $settings['users'][0]; ?>" ? 'selected="selected"') %>><?php echo $settings['users'][0]; ?></option>
+                <option <%= (debt.name == "<?php echo $settings['users'][1]; ?>" ? 'selected="selected"') %>><?php echo $settings['users'][1]; ?></option>
             </select>
             är skyldig
             <div class="input-append">
