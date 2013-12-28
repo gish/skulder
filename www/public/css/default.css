@@ -1,0 +1,12 @@
+table {
+	width: 100%;
+}
+
+tr.deleted td {
+	color: #999;
+	text-decoration: line-through;
+}
+
+#add-form input[type="tel"] {
+	width: 32px;
+}
