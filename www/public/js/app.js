@@ -312,7 +312,8 @@
 					name : $('[name="name"]').val(),
 					description : $('[name="description"]').val(),
 					share : parseInt($('[name="share"]').val(),10)/100,
-					sum : parseInt($('[name="sum"]').val(), 10)
+					sum : parseInt($('[name="sum"]').val(), 10),
+                    date: $('[name="date"]').val()
 				});
 				var message = new MessageView({
 					el : $("#message-container")

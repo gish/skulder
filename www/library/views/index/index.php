@@ -16,5 +16,7 @@
     </div>
     för
     <input type="text" name="description" placeholder="Vad som köptes">
+    den
+    <input type="date" name="date" value="<?php echo date('Y-m-d'); ?>">
     <button type="submit" class="btn btn-primary"><i class="icon-check"></i> Lägg till</button>
 </form>

@@ -7,7 +7,7 @@ class Debts extends Controller
         $amount = $_GET['amount'];
         $offset = $_GET['offset'];
         $debtsIds = R::find('debt', " 1 ORDER BY id DESC LIMIT {$offset},{$amount}");
-        
+
         foreach($debtsIds as $debt)
         {
             $debts[] = array(

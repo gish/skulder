@@ -102,6 +102,7 @@
             </div>
             för
             <input type="text" name="description" placeholder="Vad som köptes" value="<%= debt.description %>">
+            <input type="date" name="date" value="<%= debt.date %>">
             <button type="submit" class="btn btn-primary"><i class="icon-check"></i> Lägg till</button>
         </form>
     </div>

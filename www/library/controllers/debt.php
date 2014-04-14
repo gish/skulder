@@ -9,23 +9,24 @@ class Debt extends Controller
         $description = $params->description;
         $sum = $params->sum;
         $share = $params->share;
-        
+        $date = $params->date;
+
         $debt = R::dispense('debt');
         $debt->name = $name;
         $debt->description = $description;
         $debt->share = $share;
         $debt->sum = $sum;
-        $debt->date = date('Y-m-d');
+        $debt->date = $date;
         $debt->deleted = false;
         $id = R::store($debt);
-        header("Content-type: application/json;charset=utf-8;");        
+        header("Content-type: application/json;charset=utf-8;");
         echo json_encode(array(
             'id'   => $id,
-            'date' => date('Y-m-d')
+            'date' => $date
         ));
         exit();
     }
-    
+
     public function get($id)
     {
         $debt = R::findOne('debt', ' id = :id', array('id' => $id));
@@ -33,7 +34,7 @@ class Debt extends Controller
         echo json_encode($debt);
         exit();
     }
-    
+
     public function update()
     {
         $params = json_decode(file_get_contents("php://input"));
@@ -46,7 +47,7 @@ class Debt extends Controller
         R::store($debt);
         exit();
     }
-    
+
     public function delete($debt_id)
     {
         $this->debt_id = $debt_id;

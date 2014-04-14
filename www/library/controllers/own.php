@@ -6,7 +6,7 @@ class Own extends Controller
     {
         global $settings;
 
-        foreach(R::getAll("SELECT name, SUM(sum*share) AS sum FROM debt WHERE deleted IS NULL || deleted != true GROUP BY name") as $debt)
+        foreach(R::getAll("SELECT name, SUM(sum*share) AS sum FROM debt WHERE (deleted IS NULL || deleted != true) AND date <= NOW() GROUP BY name") as $debt)
         {
             $debts[$debt["name"]] = $debt["sum"];
         }
